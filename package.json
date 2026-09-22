@@ -1,0 +1,33 @@
+{
+  "name": "onesource-tax-compliance",
+  "version": "1.0.0",
+  "description": "ONESOURCE Indirect Tax Compliance - Interactive Dashboard with API Simulation",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tax",
+    "compliance",
+    "onesource",
+    "thomson-reuters",
+    "dashboard"
+  ],
+  "author": "ONESOURCE Development Team",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
