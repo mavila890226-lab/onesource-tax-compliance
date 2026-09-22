@@ -1,0 +1,22 @@
+{
+  "name": "onesource-tax-compliance",
+  "version": "1.0.0",
+  "description": "ONESOURCE Indirect Tax Compliance Dashboard",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js"
+  },
+  "keywords": [
+    "tax",
+    "compliance",
+    "onesource",
+    "dashboard"
+  ],
+  "author": "mavila890226-lab",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}
