@@ -1,5 +1,6 @@
 🏛️ ONESOURCE Indirect Tax Compliance Dashboard
 Una aplicación web interactiva para gestionar el cumplimiento fiscal indirecto en múltiples jurisdicciones. Desarrollada con Node.js + Express y un frontend moderno con HTML5, CSS3 y JavaScript vanilla.
+
 📋 Características
 ✅ Dashboard Interactivo
 
@@ -114,3 +115,4 @@ Para preguntas o sugerencias, abre un Issue en GitHub.
  Agregar notificaciones en tiempo real
  Crear API de administración
  Agregar tests automatizados
+¡Gracias por usar ONESOURCE Tax Compliance Dashboard! 🚀
