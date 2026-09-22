@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONESOURCE Tax Compliance - API Funcional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🏛️ ONESOURCE Indirect Tax Compliance</h1>
+                <p>Thomson Reuters • API Funcional con Datos Simulados</p>
+                <div class="status">
+                    <span id="status-indicator" class="status-dot"></span>
+                    <span id="status-text">Conectando...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- TABS -->
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="dashboard">📊 Dashboard</button>
+            <button class="tab-btn" data-tab="jurisdictions">🌍 Jurisdicciones</button>
+            <button class="tab-btn" data-tab="users">👥 Usuarios</button>
+            <button class="tab-btn" data-tab="transactions">💰 Transacciones</button>
+            <button class="tab-btn" data-tab="filings">📋 Filings</button>
+            <button class="tab-btn" data-tab="export">📥 Exportar</button>
+        </nav>
+
+        <!-- CONTENIDO -->
+        <main class="content">
+
+            <!-- TAB 1: DASHBOARD -->
+            <section id="dashboard" class="tab-content active">
+                <h2>Dashboard General</h2>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>Jurisdicciones Activas</h3>
+                        <p class="metric-value" id="metric-jurisdictions">-</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Tasa de Cumplimiento</h3>
+                        <p class="metric-value" id="metric-compliance">-</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Usuarios Inactivos</h3>
+                        <p class="metric-value" id="metric-inactive">-</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Filings Pendientes</h3>
+                        <p class="metric-value" id="metric-filings">-</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Últimas Transacciones</h3>
+                    <table id="latest-transactions">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Monto</th>
+                                <th>Jurisdicción</th>
+                                <th>Tipo</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <h3>Usuarios Inactivos</h3>
+                    <table id="inactive-users-table">
+                        <thead>
+                            <tr>
+                                <th>Usuario</th>
+                                <th>Email</th>
+                                <th>Última Actividad</th>
+                                <th>Días Inactivo</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- TAB 2: JURISDICCIONES -->
+            <section id="jurisdictions" class="tab-content">
+                <h2>Jurisdicciones</h2>
+
+                <div class="search-bar">
+                    <input type="text" id="search-jurisdictions" placeholder="Buscar jurisdicción...">
+                </div>
+
+                <table id="jurisdictions-table">
+                    <thead>
+                        <tr>
+                            <th>Bandera</th>
+                            <th>Nombre</th>
+                            <th>Tasa Fiscal</th>
+                            <th>Estado</th>
+                            <th>Actividad</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+
+            <!-- TAB 3: USUARIOS -->
+            <section id="users" class="tab-content">
+                <h2>Gestión de Usuarios</h2>
+
+                <div class="search-bar">
+                    <input type="text" id="search-users" placeholder="Buscar usuario...">
+                </div>
+
+                <table id="users-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Última Actividad</th>
+                            <th>Estado</th>
+                            <th>Días Inactivo</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+
+            <!-- TAB 4: TRANSACCIONES -->
+            <section id="transactions" class="tab-content">
+                <h2>Transacciones</h2>
+
+                <div class="search-bar">
+                    <input type="text" id="search-transactions" placeholder="Buscar transacción...">
+                </div>
+
+                <table id="transactions-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Monto</th>
+                            <th>Jurisdicción</th>
+                            <th>Tipo</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+
+            <!-- TAB 5: FILINGS -->
+            <section id="filings" class="tab-content">
+                <h2>Tax Filings</h2>
+
+                <div class="search-bar">
+                    <input type="text" id="search-filings" placeholder="Buscar filing...">
+                </div>
+
+                <table id="filings-table">
+                    <thead>
+                        <tr>
+                            <th>Jurisdicción</th>
+                            <th>Fecha Vencimiento</th>
+                            <th>Tipo</th>
+                            <th>Monto</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+
+            <!-- TAB 6: EXPORTAR -->
+            <section id="export" class="tab-content">
+                <h2>Exportar Datos</h2>
+
+                <div class="export-grid">
+                    <div class="export-card">
+                        <h3>📊 Jurisdicciones</h3>
+                        <p>Descargar lista de jurisdicciones</p>
+                        <button onclick="exportData('jurisdictions')" class="btn btn-primary">Descargar JSON</button>
+                    </div>
+                    <div class="export-card">
+                        <h3>👥 Usuarios</h3>
+                        <p>Descargar lista de usuarios</p>
+                        <button onclick="exportData('users')" class="btn btn-primary">Descargar JSON</button>
+                    </div>
+                    <div class="export-card">
+                        <h3>💰 Transacciones</h3>
+                        <p>Descargar transacciones</p>
+                        <button onclick="exportData('transactions')" class="btn btn-primary">Descargar JSON</button>
+                    </div>
+                    <div class="export-card">
+                        <h3>📋 Filings</h3>
+                        <p>Descargar filings</p>
+                        <button onclick="exportData('filings')" class="btn btn-primary">Descargar JSON</button>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Cargar Datos CSV</h3>
+                    <div class="upload-area">
+                        <input type="file" id="csv-upload" accept=".csv" />
+                        <label for="csv-upload">📁 Seleccionar archivo CSV</label>
+                        <button onclick="loadCSV()" class="btn btn-secondary">Cargar CSV</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>ONESOURCE Tax Compliance API • Última actualización: <span id="last-update">-</span></p>
+            <p>Servidor: <span id="server-status">Desconectado</span></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
