@@ -91,7 +91,7 @@ John Davis
 Maria López
 Emma Chen
 Robert Smith
-🔒 Seguridad
+🔒 Seguridad:
 ⚠️ Nota: Esta es una aplicación de demostración con datos simulados. Para producción:
 
 Implementar autenticación (JWT, OAuth)
