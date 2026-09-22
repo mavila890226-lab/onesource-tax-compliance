@@ -1,4 +1,0 @@
-src/
-git add .renderignore
-git commit -m "Add renderignore to prevent src detection"
-git push origin main
